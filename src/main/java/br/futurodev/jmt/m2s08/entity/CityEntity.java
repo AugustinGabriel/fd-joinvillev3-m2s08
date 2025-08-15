@@ -18,6 +18,10 @@ public class CityEntity {
     @Column(length = 10)
     private String code;
 
+    @ManyToOne
+    @JoinColumn
+    private EstadoEntity estado;
+
 }
 
 /*
@@ -26,4 +30,6 @@ CREATE TABLE cities(
 	name VARCHAR(255) NOT NULL,
 	code VARCHAR(10)
 );
+
+ALTER TABLE cities ADD COLUMN estado_id BIGINT REFERENCES estados(id);
  */
