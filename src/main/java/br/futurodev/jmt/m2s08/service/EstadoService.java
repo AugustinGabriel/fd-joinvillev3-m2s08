@@ -2,17 +2,17 @@ package br.futurodev.jmt.m2s08.service;
 
 import br.futurodev.jmt.m2s08.entity.EstadoEntity;
 import br.futurodev.jmt.m2s08.repository.EstadoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class EstadoService {
 
-    @Autowired
-    private EstadoRepository repository;
+    private final EstadoRepository repository;
 
     public List<EstadoEntity> findAll() {
         return repository.findAll();

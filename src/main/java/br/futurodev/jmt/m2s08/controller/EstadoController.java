@@ -2,26 +2,18 @@ package br.futurodev.jmt.m2s08.controller;
 
 import br.futurodev.jmt.m2s08.entity.EstadoEntity;
 import br.futurodev.jmt.m2s08.service.EstadoService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("estados")
 public class EstadoController {
 
-    @Autowired
-    private EstadoService service;
-
-    /*
-C    @PostMapping
-R    @GetMapping
-R    @GetMapping("{id}")
-U    @PutMapping("{id}")
-D    @DeleteMapping("{id}")
-     */
+    private final EstadoService service;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED) // -> Status 201
