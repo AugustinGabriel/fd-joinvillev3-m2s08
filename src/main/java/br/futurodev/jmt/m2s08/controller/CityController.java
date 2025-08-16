@@ -16,8 +16,8 @@ public class CityController {
     private final CityService service;
 
     @GetMapping
-    public List<CityEntity> get() {
-        return service.findAll();
+    public List<CityEntity> get(String name, String estadoSigla) {
+        return service.findAll(name, estadoSigla);
     }
 
     @PostMapping

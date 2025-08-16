@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CityService {
 
-    List<CityEntity> findAll();
+    List<CityEntity> findAll(String name, String estadoSigla);
     CityEntity save(CityEntity cityEntity);
 
 }
